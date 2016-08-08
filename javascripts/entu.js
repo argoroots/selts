@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    if(window.location.pathname == '/liikmed') {
+    if(window.location.pathname == '/liikmed.html') {
         $.get('https://kunda.entu.ee/api2/entity-613/childs', function(data) {
             var asutajad = $.map(data.result.person.entities, function(n) {
                 return n.name
