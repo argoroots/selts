@@ -1,0 +1,12 @@
+extends /layout
+
+
+block content
+    +markdown(D.text)
+
+
+block script
+    script(type='application/javascript').
+        $(function() {
+            $('#content img').addClass('img-responsive')
+        })
