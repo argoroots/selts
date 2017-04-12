@@ -41,7 +41,7 @@ html(lang='et')
                             ul#navigation.list-unstyled.list-inline
                                 each m, idx in G.menu
                                     li
-                                        a(href='/' + idx, class= page.path === idx ? 'active' : '')= m
+                                        a(href='/' + idx + '/', class= page.path === idx ? 'active' : '')= m
 
                         block content
             #footer.container-fluid
@@ -55,7 +55,7 @@ html(lang='et')
                             ul#frontpage-navigation.list-unstyled.list-inline
                                 each m, idx in G.menu
                                     li
-                                        a(href='/' + idx)= m
+                                        a(href='/' + idx + '/')= m
 
         script(src='/assets/js/jquery-3.2.1.min.js', type='application/javascript')
         script(src='/script.js', type='application/javascript')

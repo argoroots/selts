@@ -20,6 +20,6 @@ block content
 
     each u in F.uudised
         h1.row
-            a(href='/uudised/' + u.properties.path.values[0].value)
+            a(href='/uudised/' + u.properties.path.values[0].value + '/')
                 span.col-xs-12.col-sm-4.text-right= uudiseKpv(u.displayinfo)
                 .col-xs-12.col-sm-8= u.displayname
