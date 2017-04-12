@@ -8,8 +8,8 @@ block vars
             return [d[2], d[1], d[0]].join('.')
         }
 
-
     - title = F.uudis.displayname
+    - images = F.uudis.properties.photo && F.uudis.properties.photo.values
 
 
 block content
@@ -17,3 +17,11 @@ block content
         span.visible-xs= uudiseKpv(F.uudis.displayinfo)
         span.hidden-xs.pull-right= uudiseKpv(F.uudis.displayinfo)
     +markdown(F.uudis.properties.text.values[0].value)
+
+
+block images
+    if F.uudis.properties.photo && F.uudis.properties.photo.values
+        #news-images
+            each i, idx in F.uudis.properties.photo.values
+                if i.db_value
+                    .news-img.col-xs-12(id='news-img-' + idx, style="background-image:url('" + i.value + "')")

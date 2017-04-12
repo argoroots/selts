@@ -30,7 +30,7 @@ html(lang='et')
             ga('create', 'UA-260765-31', 'auto');
             ga('send', 'pageview');
 
-    body(style=page.image ? "background-image:url('" + page.image + "')" : '')
+    body(style=(!images && page.image) ? "background-image:url('" + page.image + "')" : '')
         #header.text-center
             a(href='/') Kunda Hariduse Toetusselts
         if !D.hideContent
@@ -44,9 +44,11 @@ html(lang='et')
                                         a(href='/' + idx + '/', class= page.path === idx ? 'active' : '')= m
 
                         block content
-            #footer.container-fluid
-                .text-center
-                    span.glyphicon.glyphicon-chevron-up
+            block images
+
+            //- #footer.container-fluid
+            //-     .text-center
+            //-         span.glyphicon.glyphicon-chevron-up
         else
             .container
                 .row
@@ -59,7 +61,7 @@ html(lang='et')
 
         script(src='/assets/js/jquery-3.2.1.min.js', type='application/javascript')
         script(src='/script.js', type='application/javascript')
-        if !page.image
+        if (!images && !page.image)
             script(type='application/javascript').
                 $('body').css('background-image', "url('/assets/images/bg/" + Math.ceil(Math.random() * 8) + ".jpg')")
         block script

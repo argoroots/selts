@@ -15,11 +15,17 @@ $(function() {
         }
 
         $('#content').css('margin-bottom', height + 'px')
+        $('.news-img').css('height', height + 'px')
     }).resize()
 
-    $(window).on('scroll', function () {
-
-    }).scroll()
+    if ($('.news-img').length > 0) {
+        $(window).on('scroll', function () {
+            if ($(window).scrollTop() < $('#content').position().top + $('#content').height()) {
+                $('#news-images').css('top', $(window).scrollTop() + 'px')
+                console.log($(window).scrollTop())
+            }
+        }).scroll()
+    }
 
     $('#footer').click(function () {
         $('html, body').animate({ scrollTop: 0 }, 200)
