@@ -1,0 +1,18 @@
+extends /layout
+
+
+block vars
+    -
+        var uudiseKpv = (date) => {
+            let d = date.split('-')
+            return [d[2], d[1], d[0]].join('.')
+        }
+
+
+    - title = F.uudis.displayname
+
+
+block content
+    h1= title
+        span.pull-right= uudiseKpv(F.uudis.displayinfo)
+    +markdown(F.uudis.properties.text.values[0].value)

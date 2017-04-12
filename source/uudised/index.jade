@@ -1,0 +1,25 @@
+extends /layout
+
+
+block vars
+    -
+        var uudisedSort = (a, b) => {
+            if (a.displayinfo > b.displayinfo) { return -1 }
+            if (a.displayinfo < b.displayinfo) { return 1 }
+            return 0
+        }
+
+        var uudiseKpv = (date) => {
+            let d = date.split('-')
+            return [d[2], d[1], d[0]].join('.')
+        }
+
+
+block content
+    - F.uudised.sort(uudisedSort)
+
+    each u in F.uudised
+        h1.row
+            a(href='/uudised/' + u.properties.path.values[0].value)
+                span.col-xs-12.col-sm-4.text-right= uudiseKpv(u.displayinfo)
+                .col-xs-12.col-sm-8= u.displayname

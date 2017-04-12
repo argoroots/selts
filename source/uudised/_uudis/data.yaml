@@ -1,0 +1,4 @@
+page:
+    title: Uudised
+    data:
+        uudis: uudis.yaml

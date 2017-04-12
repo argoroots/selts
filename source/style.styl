@@ -1,0 +1,133 @@
+body
+    font-family 'PT Sans', sans-serif
+    font-size 16px
+    font-weight 400
+    background-position center
+    background-size cover
+    background-repeat no-repeat
+    background-attachment fixed
+
+
+#header
+    margin-bottom 40px
+
+    a
+        font-family 'Teko', sans-serif
+        font-size 60px
+        line-height 60px
+        font-weight 700
+        text-transform uppercase
+        color rgba(255, 255, 255, 0.95)
+        text-shadow 0px 0px 10px rgba(68, 76, 93, 0.24)
+
+        &:hover
+            text-decoration none
+
+
+#frontpage-navigation
+    margin-bottom 40px
+    border-top 4px solid rgba(255, 255, 255, 0.95)
+    font-size 18px
+
+    a
+        display block
+        padding 10px 10px
+        text-decoration none
+        text-transform uppercase
+        font-weight 700
+        color rgba(255, 255, 255, 0.95)
+        text-shadow 0px 0px 10px rgba(68, 76, 93, 0.24)
+
+        &:hover
+            color rgba(255, 255, 255, 0.95)
+            text-decoration none
+            text-transform uppercase
+
+
+#navigation
+    margin-bottom 40px
+    padding-bottom 5px
+    border-bottom 1px solid #E8E8E8
+    font-size 18px
+
+    a
+        display block
+        padding 10px 10px
+        color #A2A2A2
+        text-decoration none
+        text-transform uppercase
+
+        &:hover
+            color #B9B9B9
+            text-decoration none
+            text-transform uppercase
+
+        &.active
+            color #333333
+            font-weight 700
+
+
+#content
+    padding-top 7px
+    padding-bottom 40px
+    background rgba(255, 255, 255, 0.95)
+    box-shadow 0px 0px 10px rgba(68, 76, 93, 0.24)
+
+    h1
+        margin-bottom 20px
+        font-size 24px
+        font-weight 700
+
+        a
+            color #333333
+
+        span
+            color #A2A2A2
+            font-weight 400
+
+
+    h2
+        margin-top 20px
+        margin-bottom 5px
+        font-size 16px
+        font-weight 700
+
+        &:first-child
+            margin-top 0px
+
+
+    a
+        color #333333
+
+
+    ol
+        list-style-type none
+        counter-reset item
+        margin 0
+        padding 0
+
+        & > li
+            display table
+            counter-increment item
+            margin-bottom 0.6em
+
+            &:before
+                content counters(item, ".") ". "
+                display table-cell
+                padding-right 0.6em
+
+    li ol > li
+        margin 0
+
+        &:before
+            content counters(item, ".") " "
+
+
+#footer
+    padding-top 20px
+    padding-bottom 20px
+    font-size 30px
+    line-height 30px
+    cursor pointer
+    color rgba(255, 255, 255, 0.95)
+    text-shadow 0px 0px 10px rgba(68, 76, 93, 0.24)
