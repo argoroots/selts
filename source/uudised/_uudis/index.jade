@@ -9,7 +9,9 @@ block vars
         }
 
     - title = F.uudis.displayname
-    - images = F.uudis.properties.photo && F.uudis.properties.photo.values
+
+    if F.uudis.properties.photo && F.uudis.properties.photo.values
+        - image = F.uudis.properties.photo.values[0].value
 
 
 block content
@@ -21,7 +23,6 @@ block content
 
 block images
     if F.uudis.properties.photo && F.uudis.properties.photo.values
-        #news-images
-            each i, idx in F.uudis.properties.photo.values
-                if i.db_value
-                    .news-img.col-xs-12(id='news-img-' + idx, style="background-image:url('" + i.value + "')")
+        each i, idx in F.uudis.properties.photo.values.slice(1)
+            if i.db_value
+                .news-img.section(id='news-img-' + idx, style="background-image:url('" + i.value + "')")

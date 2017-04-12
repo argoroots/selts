@@ -12,7 +12,7 @@ html(lang='et')
         meta(name='viewport', content='width=device-width, initial-scale=1')
         meta(property='og:url', content='https://selts.kunda.ee/' + page.path + '/')
         meta(property='og:title', content=(title || page.title) ? (title || page.title) + ' · ' + G.title : G.title)
-        meta(property='og:image', content=image || page.image)
+        meta(property='og:image', content=(image || page.image))
         meta(property='og:description', content=description)
 
         title= (title || page.title) ? (title || page.title) + ' · ' + G.title : G.title
@@ -20,6 +20,7 @@ html(lang='et')
         link(href='https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i', rel='stylesheet', type='text/css')
         link(href='https://fonts.googleapis.com/css?family=Teko:700', rel='stylesheet', type='text/css')
         link(href='/assets/css/bootstrap.min.css', rel='stylesheet', type='text/css')
+        link(href='/assets/css/jquery.fullPage.min.css', rel='stylesheet', type='text/css')
         link(href='/style.css', rel='stylesheet', type='text/css')
 
         script(type='application/javascript').
@@ -30,38 +31,41 @@ html(lang='et')
             ga('create', 'UA-260765-31', 'auto');
             ga('send', 'pageview');
 
-    body(style=(!images && page.image) ? "background-image:url('" + page.image + "')" : '')
-        #header.text-center
-            a(href='/') Kunda Hariduse Toetusselts
-        if !D.hideContent
-            .container
-                .row
-                    #content.col-xs-12.col-sm-10.col-sm-offset-1
-                        .text-center
-                            ul#navigation.list-unstyled.list-inline
-                                each m, idx in G.menu
-                                    li
-                                        a(href='/' + idx + '/', class= page.path === idx ? 'active' : '')= m
+    body(style=(image || page.image) ? "background-image:url('" + (image || page.image) + "')" : '')
+        #fullpage
+            .section
+                #header.text-center
+                    a(href='/') Kunda Hariduse Toetusselts
+                if !D.hideContent
+                    .container
+                        .row
+                            #content.col-xs-12.col-sm-10.col-sm-offset-1
+                                .text-center
+                                    ul#navigation.list-unstyled.list-inline
+                                        each m, idx in G.menu
+                                            li
+                                                a(href='/' + idx + '/', class= page.path === idx ? 'active' : '')= m
 
-                        block content
+                                block content
+
+                    //- #footer.container-fluid
+                    //-     .text-center
+                    //-         span.glyphicon.glyphicon-chevron-up
+                else
+                    .container
+                        .row
+                            .col-xs-12.col-sm-10.col-sm-offset-1
+                                .text-center
+                                    ul#frontpage-navigation.list-unstyled.list-inline
+                                        each m, idx in G.menu
+                                            li
+                                                a(href='/' + idx + '/')= m
+            .section
             block images
 
-            //- #footer.container-fluid
-            //-     .text-center
-            //-         span.glyphicon.glyphicon-chevron-up
-        else
-            .container
-                .row
-                    .col-xs-12.col-sm-10.col-sm-offset-1
-                        .text-center
-                            ul#frontpage-navigation.list-unstyled.list-inline
-                                each m, idx in G.menu
-                                    li
-                                        a(href='/' + idx + '/')= m
-
         script(src='/assets/js/jquery-3.2.1.min.js', type='application/javascript')
+        script(src='/assets/js/scrolloverflow.min.js', type='application/javascript')
+        script(src='/assets/js/jquery.fullPage.min.js', type='application/javascript')
         script(src='/script.js', type='application/javascript')
-        if (!images && !page.image)
-            script(type='application/javascript').
-                $('body').css('background-image', "url('/assets/images/bg/" + Math.ceil(Math.random() * 8) + ".jpg')")
+
         block script
