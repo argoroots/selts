@@ -14,5 +14,6 @@ block vars
 
 block content
     h1= title
-        span.pull-right= uudiseKpv(F.uudis.displayinfo)
+        span.visible-xs= uudiseKpv(F.uudis.displayinfo)
+        span.hidden-xs.pull-right= uudiseKpv(F.uudis.displayinfo)
     +markdown(F.uudis.properties.text.values[0].value)
