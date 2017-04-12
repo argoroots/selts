@@ -62,12 +62,12 @@ export LIST_YAML=${TMP_SOURCE_DIR}/data/liikmed.yaml
 ./node_modules/entu-cms/helpers/entu2yaml.js
 
 echo
+echo --------- BUILD
+./node_modules/entu-cms/build.js ./entu-cms.yaml
+
+echo
 echo --------- PICTURES
 export TMP_SOURCE_DIR=./tmp_source
 export PICTURES_YAML=${TMP_SOURCE_DIR}/data/uudised.yaml
 export PICTURES_DIR=${BUILD_DIR}/uudised
 node ./pictures.js
-
-echo
-echo --------- BUILD
-./node_modules/entu-cms/build.js ./entu-cms.yaml
