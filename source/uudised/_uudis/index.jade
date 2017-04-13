@@ -23,6 +23,6 @@ block content
 
 block images
     if F.uudis.properties.photo && F.uudis.properties.photo.values
-        each i, idx in F.uudis.properties.photo.values.slice(1)
-            if i.db_value
-                .news-img.section(id='news-img-' + idx, style="background-image:url('" + i.value + "')")
+        each i in F.uudis.properties.photo.values.slice(1)
+            if i.value
+                .section(style="background-image:url('" + i.value + "')")

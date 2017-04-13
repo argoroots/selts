@@ -34,32 +34,28 @@ html(lang='et')
     body(style=(image || page.image) ? "background-image:url('" + (image || page.image) + "')" : '')
         #fullpage
             .section
-                #header.text-center
-                    a(href='/') Kunda Hariduse Toetusselts
-                if !D.hideContent
-                    .container
-                        .row
-                            #content.col-xs-12.col-sm-10.col-sm-offset-1
-                                .text-center
-                                    ul#navigation.list-unstyled.list-inline
-                                        each m, idx in G.menu
-                                            li
-                                                a(href='/' + idx + '/', class= page.path === idx ? 'active' : '')= m
+                .container
+                    #header.text-center
+                        a(href='/') Kunda Hariduse Toetusselts
 
-                                block content
+                    if !D.hideContent
+                        #content.col-xs-12.col-sm-10.col-sm-offset-1
+                            .text-center
+                                ul#navigation.list-unstyled.list-inline
+                                    each m, idx in G.menu
+                                        li
+                                            a(href='/' + idx + '/', class= page.path === idx ? 'active' : '')= m
 
-                    //- #footer.container-fluid
-                    //-     .text-center
-                    //-         span.glyphicon.glyphicon-chevron-up
-                else
-                    .container
-                        .row
-                            .col-xs-12.col-sm-10.col-sm-offset-1
-                                .text-center
-                                    ul#frontpage-navigation.list-unstyled.list-inline
-                                        each m, idx in G.menu
-                                            li
-                                                a(href='/' + idx + '/')= m
+                            block content
+
+                    else
+                        .col-xs-12.col-sm-10.col-sm-offset-1
+                            .text-center
+                                ul#frontpage-navigation.list-unstyled.list-inline
+                                    each m, idx in G.menu
+                                        li
+                                            a(href='/' + idx + '/')= m
+
             .section
             block images
 

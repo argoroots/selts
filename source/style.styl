@@ -8,8 +8,18 @@ body
     background-attachment fixed
 
 
+.section
+    background-position center
+    background-size cover
+    background-repeat no-repeat
+
+
+.container
+    padding-top 40px
+    padding-bottom 40px
+
+
 #header
-    margin-top 40px
     margin-bottom 40px
 
     a
@@ -68,14 +78,12 @@ body
             font-weight 700
 
 
-.news-img
-    background-position center
-    background-size cover
-    background-repeat no-repeat
-
-
-#fp-nav ul li a span
-    background rgba(255, 255, 255, 0.95)
+#fp-nav
+    ul
+        li
+            a
+                span
+                    background rgba(255, 255, 255, 0.95)
 
 
 #content
@@ -133,15 +141,3 @@ body
 
         &:before
             content counters(item, ".") " "
-
-
-#footer
-    position fixed
-    bottom 0px
-    padding-top 20px
-    padding-bottom 20px
-    font-size 30px
-    line-height 30px
-    cursor pointer
-    color rgba(255, 255, 255, 0.95)
-    text-shadow 0px 0px 10px rgba(68, 76, 93, 0.24)

@@ -37,29 +37,29 @@ export OUT_DIR=${TMP_SOURCE_DIR}/uudised
 export LIST_YAML=${TMP_SOURCE_DIR}/data/uudised.yaml
 ./node_modules/entu-cms/helpers/entu2yaml.js
 
-export E_DEF=person
-export PARENT_EID=613
-export ITEM_DIR=
-export ITEM_YAML=
-export OUT_DIR=${TMP_SOURCE_DIR}/
-export LIST_YAML=${TMP_SOURCE_DIR}/data/asutajad.yaml
-./node_modules/entu-cms/helpers/entu2yaml.js
+# export E_DEF=person
+# export PARENT_EID=613
+# export ITEM_DIR=
+# export ITEM_YAML=
+# export OUT_DIR=${TMP_SOURCE_DIR}/
+# export LIST_YAML=${TMP_SOURCE_DIR}/data/asutajad.yaml
+# ./node_modules/entu-cms/helpers/entu2yaml.js
 
-export E_DEF=person
-export PARENT_EID=624
-export ITEM_DIR=
-export ITEM_YAML=
-export OUT_DIR=${TMP_SOURCE_DIR}/
-export LIST_YAML=${TMP_SOURCE_DIR}/data/juhatus.yaml
-./node_modules/entu-cms/helpers/entu2yaml.js
+# export E_DEF=person
+# export PARENT_EID=624
+# export ITEM_DIR=
+# export ITEM_YAML=
+# export OUT_DIR=${TMP_SOURCE_DIR}/
+# export LIST_YAML=${TMP_SOURCE_DIR}/data/juhatus.yaml
+# ./node_modules/entu-cms/helpers/entu2yaml.js
 
-export E_DEF=person
-export PARENT_EID=628
-export ITEM_DIR=
-export ITEM_YAML=
-export OUT_DIR=${TMP_SOURCE_DIR}/
-export LIST_YAML=${TMP_SOURCE_DIR}/data/liikmed.yaml
-./node_modules/entu-cms/helpers/entu2yaml.js
+# export E_DEF=person
+# export PARENT_EID=628
+# export ITEM_DIR=
+# export ITEM_YAML=
+# export OUT_DIR=${TMP_SOURCE_DIR}/
+# export LIST_YAML=${TMP_SOURCE_DIR}/data/liikmed.yaml
+# ./node_modules/entu-cms/helpers/entu2yaml.js
 
 echo
 echo --------- BUILD
