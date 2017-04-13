@@ -21,6 +21,6 @@ block content
     each u in F.uudised
         h1.row
             a(href='/uudised/' + u.properties.path.values[0].value + '/')
-                span.hidden-xs.col-xs-12.col-sm-4.text-right= uudiseKpv(u.displayinfo)
-                .col-xs-12.col-sm-8= u.displayname
-                span.visible-xs.col-xs-12.col-sm-4= uudiseKpv(u.displayinfo)
+                span.hidden-xs.col-sm-3.text-right= uudiseKpv(u.displayinfo)
+                .col-xs-12.col-sm-9= u.displayname
+                span.visible-xs.col-xs-12= uudiseKpv(u.displayinfo)
