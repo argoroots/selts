@@ -3,21 +3,27 @@ extends /layout
 
 block vars
     -
-        var uudiseKpv = (date) => {
+        var dt = (date) => {
             let d = date.split('-')
             return [d[2], d[1], d[0]].join('.')
         }
 
-    - title = F.uudis.displayname
+        if (F.uudis.properties.photo && F.uudis.properties.photo.values) {
+            F.uudis.properties.photo.values.sort((a, b) => {
+                if (a.value < b.value) { return -1 }
+                if (a.value > b.value) { return 1 }
+                return 0
+            })
+            image = F.uudis.properties.photo.values[0].value
+        }
 
-    if F.uudis.properties.photo && F.uudis.properties.photo.values
-        - image = F.uudis.properties.photo.values[0].value
+        title = F.uudis.displayname
 
 
 block content
     h1= title
-        span.visible-xs= uudiseKpv(F.uudis.displayinfo)
-        span.hidden-xs.pull-right= uudiseKpv(F.uudis.displayinfo)
+        span.visible-xs= dt(F.uudis.displayinfo)
+        span.hidden-xs.pull-right= dt(F.uudis.displayinfo)
     +markdown(F.uudis.properties.text.values[0].value)
 
 
