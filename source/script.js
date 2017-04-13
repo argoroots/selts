@@ -4,9 +4,10 @@ $(function() {
     }
 
     $('#fullpage').fullpage({
-        scrollOverflow: true,
+        continuousVertical: true,
         navigation: $('#fullpage .section').length > 2,
         navigationPosition: 'right',
-        continuousVertical: true,
+        scrollOverflow: true,
+        scrollOverflowReset: true,
     })
 })
