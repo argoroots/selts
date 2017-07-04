@@ -24,7 +24,7 @@ const PICTURES_DIR = process.env.PICTURES_DIR
 const download = (uri, dir, callback) => {
     fs.mkdir(dir, function(e) {
         request(uri, {encoding: 'binary'}, (error, response, body) => {
-            if response.headers['content-disposition'] {
+            if (response && response.headers && response.headers['content-disposition']) {
                 filename = path.join(dir, response.headers['content-disposition'].replace('inline; filename*=UTF-8\'\'', ''))
                 console.log(filename)
                 fs.writeFile(filename, body, 'binary', callback)
