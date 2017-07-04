@@ -8,7 +8,7 @@ block vars
             return [d[2], d[1], d[0]].join('.')
         }
 
-        if (F.uudis.properties.photo && F.uudis.properties.photo.values) {
+        if (F.uudis && F.uudis.properties && F.uudis.properties.photo && F.uudis.properties.photo.values) {
             F.uudis.properties.photo.values.sort((a, b) => {
                 if (a.value < b.value) { return -1 }
                 if (a.value > b.value) { return 1 }
@@ -17,18 +17,19 @@ block vars
             image = F.uudis.properties.photo.values[0].value
         }
 
-        title = F.uudis.displayname
+        title = F.uudis && F.uudis.displayname ? F.uudis.displayname : ''
 
 
 block content
-    h1= title
-        span.visible-xs= dt(F.uudis.displayinfo)
-        span.hidden-xs.pull-right= dt(F.uudis.displayinfo)
-    +markdown(F.uudis.properties.text.values[0].value)
+    if F.uudis && F.uudis.properties
+        h1= title
+            span.visible-xs= dt(F.uudis.displayinfo)
+            span.hidden-xs.pull-right= dt(F.uudis.displayinfo)
+        +markdown(F.uudis.properties.text.values[0].value)
 
 
 block images
-    if F.uudis.properties.photo && F.uudis.properties.photo.values
+    if F.uudis && F.uudis.properties && F.uudis.properties.photo && F.uudis.properties.photo.values
         each i in F.uudis.properties.photo.values.slice(1)
             if i.value
                 .section(style="background-image:url('" + i.value + "')")
