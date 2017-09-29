@@ -40,7 +40,7 @@ html(lang='et')
                             a(href='/') Kunda Hariduse Toetusselts
 
                     if !D.hideContent
-                        #content.col-xs-12.col-sm-10.col-md-8.col-sm-offset-1.col-md-offset-2
+                        #content.col-xs-12.col-sm-10.col-sm-offset-1
                             .text-center
                                 ul#navigation.list-unstyled.list-inline
                                     each m, idx in G.menu
@@ -50,7 +50,7 @@ html(lang='et')
                             block content
 
                     else
-                        .col-xs-12.col-sm-10.col-md-8.col-sm-offset-1.col-md-offset-2
+                        .col-xs-12.col-sm-10.col-sm-offset-1
                             .text-center
                                 ul#frontpage-navigation.list-unstyled.list-inline
                                     each m, idx in G.menu

@@ -5,7 +5,7 @@ $(function() {
 
     $('#fullpage').fullpage({
         continuousVertical: true,
-        navigation: $('#fullpage .section').length > 2,
+        navigation: true,
         navigationPosition: 'right',
         scrollOverflow: true
     })
