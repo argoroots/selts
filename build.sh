@@ -39,3 +39,5 @@ echo --------- PICTURES
 export PICTURES_YAML=${SOURCE_DIR}/uudised/_uudis/data.yaml
 export PICTURES_DIR=${BUILD_DIR}
 node ./pictures.js
+echo
+echo --------- DONE
