@@ -19,7 +19,7 @@ $(function() {
                 lat: parseFloat($('.map-item').data('geo').split(',')[0]),
                 lng: parseFloat($('.map-item').data('geo').split(',')[1])
             },
-            zoom: 11,
+            zoom: 9,
             scrollwheel: false,
             mapTypeControl: false,
             streetViewControl: false,
