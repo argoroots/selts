@@ -64,6 +64,7 @@ $(function() {
                         lng: parseFloat(position.split(',')[1]),
                     },
                     title: $(this).text(),
+                    url: $(this).data('url'),
                     clickable: multiplePointers,
                     map: map
                 })
@@ -76,8 +77,13 @@ $(function() {
                     bounds.extend(marker.getPosition())
                     map.fitBounds(bounds)
                 }
+
+                if ($(this).data('url')) {
+                    google.maps.event.addListener(marker, 'click', function() {
+                        window.location.href = this.url;
+                    })
+                }
             }
         })
     }
-
 })
