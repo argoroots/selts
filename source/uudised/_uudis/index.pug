@@ -23,7 +23,8 @@ block content
     h1= self.title
         span.visible-xs= dt(self.date)
         span.hidden-xs.pull-right= dt(self.date)
-    +markdown(self.text)
+    article
+        +markdown(self.text)
 
 
 block images

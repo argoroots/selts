@@ -20,7 +20,8 @@ block vars
 
 block content
     h1= self.title
-    +markdown(self.text)
+    article
+        +markdown(self.text)
 
     if self.geo
         .row
