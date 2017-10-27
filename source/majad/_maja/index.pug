@@ -2,7 +2,7 @@ extends /layout
 
 
 block script
-    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCLvF-XJHdyb1STAF38EukXHJpoNC_NwqU', type='application/javascript')
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDKUxMa3cmiecm331dv0_gTDE0wKkuxpsw', type='application/javascript')
 
 
 block vars
@@ -19,11 +19,12 @@ block vars
 
 
 block content
+    h1= self.title
+    +markdown(self.text)
+
     .row
         #map.col-xs-12
 
-    h1= self.title
-    +markdown(self.text)
     .list-item.hidden(data-geo=self.geo, data-info=self.title)
 
 
