@@ -2,4 +2,7 @@ extends /layout
 
 
 block content
-    +markdown(self.text)
+    each u in self.file.majad
+        h1.row
+            a(href='/' + u.path + '/')
+                .col-xs-12.col-sm-9= u.title
