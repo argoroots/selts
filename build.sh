@@ -6,7 +6,7 @@ export SOURCE_DIR=./source
 export TMP_SOURCE_DIR=./tmp_source
 export BUILD_DIR=./build
 
-export ENTU_URL=https://kunda.entu.ee
+export ENTU_DB=kunda
 
 
 # before_script:
@@ -23,51 +23,26 @@ rm -rf ${BUILD_DIR}/assets
 mkdir -p ${BUILD_DIR}/assets
 cp -r ./assets/* ${BUILD_DIR}/assets
 
-npm install entu-cms
+rm -r node_modules
+npm install entu-ssg
 
 
 # script:
 echo
 echo --------- FETCH
-export E_DEF=news
-export PARENT_EID=743
-export ITEM_DIR=${SOURCE_DIR}/uudised/_uudis
-export ITEM_YAML=uudis.yaml
-export OUT_DIR=${TMP_SOURCE_DIR}/uudised
-export LIST_YAML=${TMP_SOURCE_DIR}/data/uudised.yaml
-./node_modules/entu-cms/helpers/entu2yaml.js
+export ENTU_TYPE=news
+# export ENTU_PARENT=743
+./node_modules/entu-cms/helpers/entu2yaml.js ${TMP_SOURCE_DIR}/uudised/_uudis/data.yaml
 
-# export E_DEF=person
-# export PARENT_EID=613
-# export ITEM_DIR=
-# export ITEM_YAML=
-# export OUT_DIR=${TMP_SOURCE_DIR}/
-# export LIST_YAML=${TMP_SOURCE_DIR}/data/asutajad.yaml
-# ./node_modules/entu-cms/helpers/entu2yaml.js
-
-# export E_DEF=person
-# export PARENT_EID=624
-# export ITEM_DIR=
-# export ITEM_YAML=
-# export OUT_DIR=${TMP_SOURCE_DIR}/
-# export LIST_YAML=${TMP_SOURCE_DIR}/data/juhatus.yaml
-# ./node_modules/entu-cms/helpers/entu2yaml.js
-
-# export E_DEF=person
-# export PARENT_EID=628
-# export ITEM_DIR=
-# export ITEM_YAML=
-# export OUT_DIR=${TMP_SOURCE_DIR}/
-# export LIST_YAML=${TMP_SOURCE_DIR}/data/liikmed.yaml
-# ./node_modules/entu-cms/helpers/entu2yaml.js
 
 echo
 echo --------- BUILD
 ./node_modules/entu-cms/build.js ./entu-cms.yaml
 
+
 echo
 echo --------- PICTURES
 export TMP_SOURCE_DIR=./tmp_source
-export PICTURES_YAML=${TMP_SOURCE_DIR}/data/uudised.yaml
-export PICTURES_DIR=${BUILD_DIR}/uudised
+export PICTURES_YAML=${TMP_SOURCE_DIR}/uudised/_uudis/data.yaml
+export PICTURES_DIR=${BUILD_DIR}
 node ./pictures.js

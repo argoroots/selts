@@ -1,9 +1,12 @@
+const _ = require('lodash')
 const fs = require('fs')
-const op = require('object-path')
 const path = require('path')
 const request = require('request')
 const yaml = require('js-yaml')
 
+
+const ENTU_DB = process.env.ENTU_DB
+const ENTU_KEY = process.env.ENTU_KEY
 
 const PICTURES_YAML = process.env.PICTURES_YAML
     ? ( path.isAbsolute(process.env.PICTURES_YAML)
@@ -11,7 +14,6 @@ const PICTURES_YAML = process.env.PICTURES_YAML
             : path.join(process.cwd(), process.env.PICTURES_YAML)
       )
     : false
-
 
 const PICTURES_DIR = process.env.PICTURES_DIR
     ? ( path.isAbsolute(process.env.PICTURES_DIR)
@@ -21,31 +23,51 @@ const PICTURES_DIR = process.env.PICTURES_DIR
     : false
 
 
-const download = (uri, dir, callback) => {
-    fs.mkdir(dir, function(e) {
-        request(uri, {encoding: 'binary'}, (error, response, body) => {
-            if (response && response.headers && response.headers['content-disposition']) {
-                filename = path.join(dir, response.headers['content-disposition'].replace('inline; filename*=UTF-8\'\'', ''))
-                console.log(filename)
-                fs.writeFile(filename, body, 'binary', callback)
-            } else {
-                console.log('NO FILE: ', uri)
-                callback(null)
-            }
-        })
-    })
-}
-
-
 const entities = yaml.safeLoad(fs.readFileSync(PICTURES_YAML, 'utf8'))
 
 
-for (var e = 0; e < entities.length; e++) {
-    var entityId = op.get(entities[e], 'properties.path.values.0.value')
-
-    for (var i = 0; i < op.get(entities[e], 'properties.photo.values', []).length; i++) {
-        var fileId = op.get(entities[e], ['properties', 'photo', 'values', i, 'db_value'], '')
-        var url = 'https://kunda.entu.ee/api2/file-' + fileId
-        download(url, path.join(PICTURES_DIR, entityId + ''), () => {})
+request({
+    url: 'https://api.entu.ee/auth',
+    method: 'GET',
+    json: true,
+    'auth': {
+        'bearer': ENTU_KEY
     }
-}
+}, (error, response, body) => {
+    if (error) { console.error(error) }
+    if (response.statusCode !== 200) { console.error(body) }
+
+    let token = _.get(body, [ENTU_DB, 'token'], '')
+
+    for (var e = 0; e < entities.length; e++) {
+        let photos = _.get(entities, [e, 'photo'], [])
+        let entityPath = _.get(entities, [e, 'path'])
+
+        if (!Array.isArray(photos)) {
+            photos = [photos]
+        }
+
+        for (let i = 0; i < photos.length; i++) {
+            request({
+                url: 'https://api.entu.ee/property/' + photos[i]._id,
+                method: 'GET',
+                encoding: 'binary',
+                'auth': {
+                    'bearer': token
+                },
+                qs: { download: true }
+            }, (error, response, body) => {
+                if (error) { console.error(error) }
+                if (response.statusCode !== 200) { console.error(body) }
+
+                if (response && response.headers && response.headers['content-disposition']) {
+                    let filename = path.join(PICTURES_DIR, entityPath, response.headers['content-disposition'].replace('inline; filename*=UTF-8\'\'', ''))
+                    console.log(filename)
+                    fs.writeFile(filename, body, 'binary', err => { return })
+                } else {
+                    console.log('NO FILE: ', uri)
+                }
+            })
+        }
+    }
+})

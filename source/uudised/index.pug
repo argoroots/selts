@@ -8,17 +8,17 @@ block vars
             return [d[2], d[1], d[0]].join('.')
         }
 
-        F.uudised.sort((a, b) => {
-            if (a.displayinfo > b.displayinfo) { return -1 }
-            if (a.displayinfo < b.displayinfo) { return 1 }
-            return 0
-        })
+        //- self.file.uudised.sort((a, b) => {
+        //-     if (a.displayinfo > b.displayinfo) { return -1 }
+        //-     if (a.displayinfo < b.displayinfo) { return 1 }
+        //-     return 0
+        //- })
 
 
 block content
-    each u in F.uudised
+    each u in self.file.uudised
         h1.row
-            a(href='/uudised/' + u.properties.path.values[0].value + '/')
-                span.hidden-xs.col-sm-3.text-right= dt(u.displayinfo)
-                .col-xs-12.col-sm-9= u.displayname
-                span.visible-xs.col-xs-12= dt(u.displayinfo)
+            a(href='/uudised/' + u.path + '/')
+                //- span.hidden-xs.col-sm-3.text-right= dt(u.displayinfo)
+                //- .col-xs-12.col-sm-9= u.displayname
+                //- span.visible-xs.col-xs-12= dt(u.displayinfo)
