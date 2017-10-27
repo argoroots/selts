@@ -28,15 +28,8 @@ html(lang='et')
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
             ga('create', 'UA-260765-31', 'auto');
-
             ga('send', 'pageview');
-
-
-            var misiganesMuutujaSeeSiisOn = '000000000000'
-
-            console.log(misiganesMuutujaSeeSiisOn)
 
 
     body(style=self.image ? "background-image:url('" + self.image + "')" : '')
@@ -47,7 +40,14 @@ html(lang='et')
                         #header.text-center
                             a(href='/') Kunda Hariduse Toetusselts
 
-                    if !self.hideContent
+                    if self.hideContent
+                        .col-xs-12.col-sm-10.col-sm-offset-1
+                            .text-center
+                                ul#frontpage-navigation.list-unstyled.list-inline
+                                    each m, idx in self.menu || []
+                                        li
+                                            a(href='/' + idx + '/')= m
+                    else
                         #content.col-xs-12.col-sm-10.col-sm-offset-1
                             .text-center
                                 ul#navigation.list-unstyled.list-inline
@@ -56,14 +56,6 @@ html(lang='et')
                                             a(href='/' + idx + '/', class= self.path === idx ? 'active' : '')= m
 
                             block content
-
-                    else
-                        .col-xs-12.col-sm-10.col-sm-offset-1
-                            .text-center
-                                ul#frontpage-navigation.list-unstyled.list-inline
-                                    each m, idx in self.menu || []
-                                        li
-                                            a(href='/' + idx + '/')= m
 
             .section
             block images

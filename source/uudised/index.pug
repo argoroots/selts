@@ -3,14 +3,14 @@ extends /layout
 
 block vars
     -
-        var dt = (date) => {
-            let d = date.split('-')
+        const dt = date => {
+            let d = date.substr(0, 10).split('-')
             return [d[2], d[1], d[0]].join('.')
         }
 
         //- self.file.uudised.sort((a, b) => {
-        //-     if (a.displayinfo > b.displayinfo) { return -1 }
-        //-     if (a.displayinfo < b.displayinfo) { return 1 }
+        //-     if (a.date > b.date) { return -1 }
+        //-     if (a.date < b.date) { return 1 }
         //-     return 0
         //- })
 
@@ -19,6 +19,6 @@ block content
     each u in self.file.uudised
         h1.row
             a(href='/uudised/' + u.path + '/')
-                //- span.hidden-xs.col-sm-3.text-right= dt(u.displayinfo)
-                //- .col-xs-12.col-sm-9= u.displayname
-                //- span.visible-xs.col-xs-12= dt(u.displayinfo)
+                span.hidden-xs.col-sm-3.text-right= dt(u.date)
+                .col-xs-12.col-sm-9= u.title
+                span.visible-xs.col-xs-12= dt(u.date)
