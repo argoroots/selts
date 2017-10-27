@@ -2,7 +2,7 @@
 #     - et
 # defaultLocale: et
 
-source: ./tmp_source
+source: ./source
 build: ./build
 assets: ./assets
 
@@ -12,7 +12,7 @@ protectedFromCleanup:
     - index.html
 
 pug:
-    basedir: ./tmp_source/_templates
+    basedir: ./source/_templates
 
 server:
     port: 4000
