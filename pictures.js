@@ -1,6 +1,7 @@
 const _ = require('lodash')
 const fs = require('fs')
 const path = require('path')
+const async = require('async')
 const request = require('request')
 const yaml = require('js-yaml')
 
@@ -39,17 +40,17 @@ request({
 
     let token = _.get(body, [ENTU_DB, 'token'], '')
 
-    for (var e = 0; e < entities.length; e++) {
-        let photos = _.get(entities, [e, 'photo'], [])
-        let entityPath = _.get(entities, [e, 'path'])
+    async.each(entities, (entity, callback) => {
+        let photos = _.get(entity, 'photo', [])
+        let entityPath = _.get(entity, 'path')
 
         if (!Array.isArray(photos)) {
             photos = [photos]
         }
 
-        for (let i = 0; i < photos.length; i++) {
+        async.each(photos, (photo, callback) => {
             request({
-                url: 'https://api.entu.ee/property/' + photos[i]._id,
+                url: 'https://api.entu.ee/property/' + photo._id,
                 method: 'GET',
                 encoding: 'binary',
                 'auth': {
@@ -63,11 +64,14 @@ request({
                 if (response && response.headers && response.headers['content-disposition']) {
                     let filename = path.join(PICTURES_DIR, entityPath, response.headers['content-disposition'].replace('inline; filename*=UTF-8\'\'', ''))
                     console.log(filename)
-                    fs.writeFileSync(filename, body, 'binary')
+                    fs.writeFile(filename, body, 'binary', callback)
                 } else {
                     console.log('NO FILE: ', uri)
+                    callback(null)
                 }
             })
-        }
-    }
+        }, callback)
+    }, err => {
+        if (err) { console.error(err) }
+    })
 })
