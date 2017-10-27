@@ -18,7 +18,7 @@ mkdir -p ${BUILD_DIR}/assets
 cp -r ./assets/* ${BUILD_DIR}/assets
 
 rm -r node_modules
-npm install entu-ssg
+npm install -q entu-ssg
 
 
 echo
