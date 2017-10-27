@@ -7,6 +7,8 @@ export TMP_SOURCE_DIR=./tmp_source
 export BUILD_DIR=./build
 
 export ENTU_DB=kunda
+# export ENTU_DB=
+# export ENTU_KEY=
 
 
 # before_script:
@@ -32,12 +34,12 @@ echo
 echo --------- FETCH
 export ENTU_TYPE=news
 # export ENTU_PARENT=743
-./node_modules/entu-cms/helpers/entu2yaml.js ${TMP_SOURCE_DIR}/uudised/_uudis/data.yaml
+./node_modules/entu-ssg/helpers/entu2yaml.js ${TMP_SOURCE_DIR}/uudised/_uudis/data.yaml
 
 
 echo
 echo --------- BUILD
-./node_modules/entu-cms/build.js ./entu-cms.yaml
+./node_modules/entu-ssg/build.js ./entu-ssg.yaml
 
 
 echo
