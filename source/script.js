@@ -10,14 +10,14 @@ $(function() {
         scrollOverflow: true
     })
 
-    if ($('.list-item').length > 0) {
-        var multiplePointers = $('.list-item').length > 1
+    if ($('.map-item').length > 0) {
+        var multiplePointers = $('.map-item').length > 1
         var bounds = new google.maps.LatLngBounds()
         var infowindow = new google.maps.InfoWindow()
         var map = new google.maps.Map(document.getElementById('map'), {
             center: {
-                lat: parseFloat($('.list-item').data('geo').split(',')[0]),
-                lng: parseFloat($('.list-item').data('geo').split(',')[1])
+                lat: parseFloat($('.map-item').data('geo').split(',')[0]),
+                lng: parseFloat($('.map-item').data('geo').split(',')[1])
             },
             zoom: 11,
             scrollwheel: false,
@@ -53,7 +53,7 @@ $(function() {
             ]
         })
 
-        $('.list-item').each(function () {
+        $('.map-item').each(function () {
             var position = $(this).data('geo')
             if (position) {
                 var info = '<p><a href="' + $(this).attr('href') + '"><strong>' + $(this).text() + '</strong></a></p><p>' + $(this).data('info') + '</p>'
