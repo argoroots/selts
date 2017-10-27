@@ -22,10 +22,11 @@ block content
     h1= self.title
     +markdown(self.text)
 
-    .row
-        #map.col-xs-12
+    if self.geo
+        .row
+            #map.col-xs-12
 
-    .map-item.hidden(data-geo=self.geo, data-info=self.title)
+        .map-item.hidden(data-geo=self.geo, data-info=self.title)
 
 
 block images
