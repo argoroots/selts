@@ -55,6 +55,8 @@ $(function() {
 
         $('.map-item').each(function () {
             var position = $(this).data('geo')
+            var url = $(this).data('url')
+
             if (position) {
                 var marker = new google.maps.Marker({
                     position: {
@@ -62,14 +64,13 @@ $(function() {
                         lng: parseFloat(position.split(',')[1]),
                     },
                     title: $(this).text(),
-                    url: $(this).data('url'),
                     clickable: multiplePointers,
                     map: map
                 })
 
-                if ($(this).data('url')) {
+                if (url) {
                     marker.addListener('click', function() {
-                        window.location.href = $(this).data('url')
+                        window.location.href = url
                     })
                     bounds.extend(marker.getPosition())
                     map.fitBounds(bounds)
