@@ -19,7 +19,7 @@ $(function() {
                 lat: parseFloat($('.map-item').data('geo').split(',')[0]),
                 lng: parseFloat($('.map-item').data('geo').split(',')[1])
             },
-            zoom: 9,
+            zoom: 15,
             scrollwheel: false,
             mapTypeControl: false,
             streetViewControl: false,
@@ -56,8 +56,6 @@ $(function() {
         $('.map-item').each(function () {
             var position = $(this).data('geo')
             if (position) {
-                var info = '<p><a href="' + $(this).attr('href') + '"><strong>' + $(this).text() + '</strong></a></p><p>' + $(this).data('info') + '</p>'
-
                 var marker = new google.maps.Marker({
                     position: {
                         lat: parseFloat(position.split(',')[0]),
@@ -69,19 +67,12 @@ $(function() {
                     map: map
                 })
 
-                if (multiplePointers) {
+                if ($(this).data('url')) {
                     marker.addListener('click', function() {
-                        infowindow.setContent(info)
-                        infowindow.open(map, this)
+                        window.location.href = $(this).data('url')
                     })
                     bounds.extend(marker.getPosition())
                     map.fitBounds(bounds)
-                }
-
-                if ($(this).data('url')) {
-                    google.maps.event.addListener(marker, 'click', function() {
-                        window.location.href = this.url;
-                    })
                 }
             }
         })
