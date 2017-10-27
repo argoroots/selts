@@ -13,8 +13,9 @@ export ENTU_DB=kunda
 
 echo
 echo --------- PREFETCH
-rm -rf ${BUILD_DIR}/assets
+rm -rf ${BUILD_DIR}
 mkdir -p ${BUILD_DIR}/assets
+mkdir -p ${BUILD_DIR}/uudised
 cp -r ./assets/* ${BUILD_DIR}/assets
 
 rm -r node_modules
