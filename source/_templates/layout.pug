@@ -17,13 +17,13 @@ html(lang='et')
 
         title= self.title ? self.title + ' · ' + self.siteTitle : self.siteTitle
 
-        link(href='https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i', rel='stylesheet', type='text/css')
-        link(href='https://fonts.googleapis.com/css?family=Teko:700', rel='stylesheet', type='text/css')
-        link(href='/assets/css/bootstrap.min.css', rel='stylesheet', type='text/css')
-        link(href='/assets/css/jquery.fullPage.min.css', rel='stylesheet', type='text/css')
-        link(href='/style.css', rel='stylesheet', type='text/css')
+        link(href='https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i', rel='stylesheet')
+        link(href='https://fonts.googleapis.com/css?family=Teko:700', rel='stylesheet')
+        link(href='/assets/css/bootstrap.min.css', rel='stylesheet')
+        link(href='/assets/css/jquery.fullPage.min.css', rel='stylesheet')
+        link(href='/style.css', rel='stylesheet')
 
-        script(type='application/javascript').
+        script.
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -60,10 +60,10 @@ html(lang='et')
             .section
             block images
 
-        script(src='/assets/js/jquery-3.2.1.min.js', type='application/javascript')
-        script(src='/assets/js/scrolloverflow.min.js', type='application/javascript')
-        script(src='/assets/js/jquery.fullPage.min.js', type='application/javascript')
+        script(src='/assets/js/jquery-3.2.1.min.js')
+        script(src='/assets/js/scrolloverflow.min.js')
+        script(src='/assets/js/jquery.fullPage.min.js')
 
         block script
 
-        script(src='/script.js', type='application/javascript')
+        script(src='/script.js')
