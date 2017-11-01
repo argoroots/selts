@@ -27,8 +27,7 @@ npm install -q entu-ssg
 
 echo
 echo --------- FETCH
-export ENTU_TYPE=news
-# export ENTU_PARENT=743
+export ENTU_QUERY="_type.string=news&props=path,date,title,text,photo._id&sort=-date"
 ./node_modules/entu-ssg/helpers/entu2yaml.js ${SOURCE_DIR}/uudised/_uudis/data.yaml
 
 
