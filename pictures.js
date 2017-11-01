@@ -1,5 +1,5 @@
 const _ = require('lodash')
-const fs = require('fs')
+const fs = require('fs-extra')
 const path = require('path')
 const async = require('async')
 const request = require('request')
@@ -58,13 +58,16 @@ request({
                 },
                 qs: { download: true }
             }, (error, response, body) => {
-                if (error) { console.error(error) }
-                if (response.statusCode !== 200) { console.error(body) }
-
-                if (response && response.headers && response.headers['content-disposition']) {
+                if (error) {
+                    console.error(error)
+                    callback(null)
+                } else if (response.statusCode !== 200) {
+                    console.error(body)
+                    callback(null)
+                } else if (_.get(response, 'headers.content-disposition')) {
                     let filename = path.join(PICTURES_DIR, entityPath, response.headers['content-disposition'].replace('inline; filename*=UTF-8\'\'', ''))
                     console.log(filename)
-                    fs.writeFile(filename, body, 'binary', callback)
+                    fs.outputFileSync(filename, body, 'binary')
                 } else {
                     console.log('NO FILE: ', uri)
                     callback(null)

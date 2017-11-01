@@ -8,15 +8,17 @@ block vars
             return [d[2], d[1], d[0]].join('.')
         }
 
-        if (!Array.isArray(self.photo)) { self.photo = [self.photo] }
+        if (self.photo) {
+            if (!Array.isArray(self.photo)) { self.photo = [self.photo] }
 
-        self.photo.sort((a, b) => {
-            if (a.filename < b.filename) { return -1 }
-            if (a.filename > b.filename) { return 1 }
-            return 0
-        })
+            self.photo.sort((a, b) => {
+                if (a.filename < b.filename) { return -1 }
+                if (a.filename > b.filename) { return 1 }
+                return 0
+            })
 
-        self.image = self.photo[0].filename
+            self.image = self.photo[0].filename
+        }
 
 
 block content
