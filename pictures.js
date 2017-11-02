@@ -69,7 +69,7 @@ request({
                     console.log(filename)
                     fs.outputFileSync(filename, body, 'binary')
                 } else {
-                    console.log('NO FILE: ', uri)
+                    console.log('NO FILE: ', 'https://api.entu.ee/property/' + photo._id)
                     callback(null)
                 }
             })
