@@ -64,12 +64,10 @@ request({
                 } else if (response.statusCode !== 200) {
                     console.error(body)
                     callback(null)
-                } else if (_.get(response, 'headers.content-disposition')) {
-                    let filename = path.join(PICTURES_DIR, entityPath, response.headers['content-disposition'].replace('inline; filename*=UTF-8\'\'', ''))
+                } else {
+                    let filename = path.join(PICTURES_DIR, entityPath, photo.filename)
                     console.log(filename)
                     fs.outputFileSync(filename, body, 'binary')
-                } else {
-                    console.log('NO FILE: ', 'https://api.entu.ee/property/' + photo._id)
                     callback(null)
                 }
             })
