@@ -1,0 +1,18 @@
+extends /layout
+
+
+block vars
+    -
+        const dt = date => {
+            let d = date.substr(0, 10).split('-')
+            return [d[2], d[1], d[0]].join('.')
+        }
+
+
+block content
+    each d in self.file.dokumendid
+        .row
+            h2.col-xs-12= d.name
+            .col-xs-12
+                each f in d.files
+                    a(href='/dokumendid/' + f._id + '/' + f.filename)= f.filename
