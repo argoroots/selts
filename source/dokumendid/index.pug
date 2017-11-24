@@ -15,10 +15,13 @@ block vars
 
 
 block content
-    each d in self.file.dokumendid
-        .row
-            h1.col-xs-12= d.name
-            ul.col-xs-12
+    .row
+        each d in self.file.dokumendid
+            h2.col-xs-12= d.name
+            ul.list-unstyled.col-xs-12
                 each f in getList(d.files)
                     li
                         a(href='/dokumendid/' + f._id + '/' + f.filename)= f.filename
+
+        h2.col-xs-12
+            a(href='/pohikiri/') Põhikiri

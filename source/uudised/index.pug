@@ -11,7 +11,7 @@ block vars
 
 block content
     each u in self.file.uudised
-        h1.row
+        h2.row
             a(href='/' + u.path + '/')
                 span.hidden-xs.col-sm-3.text-right= dt(u.date)
                 .col-xs-12.col-sm-9= u.title
