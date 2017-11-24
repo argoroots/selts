@@ -3,16 +3,22 @@ extends /layout
 
 block vars
     -
-        const dt = date => {
-            let d = date.substr(0, 10).split('-')
-            return [d[2], d[1], d[0]].join('.')
+        const getList = (t) => {
+            if (!t) {
+                return []
+            } else if (Array.isArray(t)) {
+                return t
+            } else {
+                return [t]
+            }
         }
 
 
 block content
     each d in self.file.dokumendid
         .row
-            h2.col-xs-12= d.name
-            .col-xs-12
-                each f in d.files
-                    a(href='/dokumendid/' + f._id + '/' + f.filename)= f.filename
+            h1.col-xs-12= d.name
+            ul.col-xs-12
+                each f in getList(d.files)
+                    li
+                        a(href='/dokumendid/' + f._id + '/' + f.filename)= f.filename
