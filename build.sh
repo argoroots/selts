@@ -31,7 +31,7 @@ echo --------- FETCH
 export ENTU_QUERY="_type.string=news&props=path,date,title,text,photo._id,photo.filename&sort=-date"
 ./node_modules/entu-ssg/helpers/entu2yaml.js ${SOURCE_DIR}/uudised/_uudis/data.yaml
 
-export ENTU_QUERY="_type.string=document&props=name,files&sort=-_id"
+export ENTU_QUERY="_type.string=document&props=name,files"
 ./node_modules/entu-ssg/helpers/entu2yaml.js ${SOURCE_DIR}/dokumendid/dokumendid.yaml
 
 
