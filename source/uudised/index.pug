@@ -4,6 +4,7 @@ extends /_templates/layout
 block vars
     -
         const dt = date => {
+            if (!date) return ''
             let d = date.substr(0, 10).split('-')
             return [d[2], d[1], d[0]].join('.')
         }
