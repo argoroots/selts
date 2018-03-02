@@ -6,7 +6,6 @@
 export SOURCE_DIR=./source
 export BUILD_DIR=./build
 
-export ENTU_DB=kunda
 # export ENTU_DB=
 # export ENTU_KEY=
 
@@ -21,9 +20,6 @@ mkdir -p ${BUILD_DIR}/majad
 mkdir -p ${BUILD_DIR}/dokumendid
 
 cp -r ./assets/* ${BUILD_DIR}/assets
-
-rm -r node_modules
-npm install -q entu-ssg
 
 
 echo

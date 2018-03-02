@@ -1,0 +1,20 @@
+{
+  "name": "selts",
+  "version": "2.0.0",
+  "description": "Kunda Hariduse Toetusselts",
+  "dependencies": {
+    "entu-ssg": "^4.1.3"
+  },
+  "scripts": {
+    "build": "./build.sh",
+    "start": "pushd ./build; python -m SimpleHTTPServer; popd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/argoroots/selts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/argoroots/selts/issues"
+  },
+  "homepage": "https://selts.kunda.ee"
+}
