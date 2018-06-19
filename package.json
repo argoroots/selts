@@ -2,6 +2,7 @@
   "name": "selts",
   "version": "2.0.0",
   "description": "Kunda Hariduse Toetusselts",
+  "private": true,
   "dependencies": {
     "entu-ssg": "^4.1.3"
   },
