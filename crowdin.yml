@@ -1,4 +1,3 @@
----
 files:
   -
     source: /source/**/*.et.yaml
