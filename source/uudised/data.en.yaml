@@ -1,0 +1,5 @@
+---
+title: News
+path: news
+data:
+  uudised: /uudised/_uudis/data.yaml
