@@ -1,6 +1,8 @@
-# locales:
-#     - et
-# defaultLocale: et
+locales:
+    - et
+    - ru
+    - en
+defaultLocale: et
 
 source: ./source
 build: ./build
