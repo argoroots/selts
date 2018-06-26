@@ -1,5 +1,5 @@
 -
-    path: majad/kunda-vabriku-nn-saksa-kool
+    path: houses/elementary-school-of-kunda-factory
     geo: 59.500775,26.535441
     title: The Elementary School of Kunda Factory
     text: |
@@ -8,7 +8,7 @@
         filename: kunda-vabriku-nn-saksa-kool.jpg
 
 -
-    path: majad/opikute-maja
+    path: houses/house-of-the-opiks
     geo: 59.509584,26.546144
     title: The house of the Öpiks´
     text: |
@@ -29,7 +29,7 @@
         filename: opikute-maja.jpg
 
 -
-    path: majad/lahta-koolituba
+    path: houses/lahta-classroom
     geo: 59.501946,26.522582
     title: Lähta classroom
     text: |
@@ -38,7 +38,7 @@
         filename: lahta-koolituba.jpg
 
 -
-    path: majad/valge-maja
+    path: houses/white-house
     geo: 59.509595,26.547599
     title: The White House
     text: |
@@ -47,7 +47,7 @@
         filename: valge-maja.jpg
 
 -
-    path: majad/kunda-uus-koolimaja
+    path: houses/new-schoolhouse-in-kunda
     geo: 59.503241,26.528894
     title: A New Schoolhouse in Kunda
     text: |
@@ -64,7 +64,7 @@
         filename: kunda-uus-koolimaja.jpg
 
 -
-    path: majad/kunda-tsemendivabrik
+    path: houses/kunda-cement-factory
     geo: 59.499613,26.540347
     title: Kunda Cement Factory
     text: |
@@ -79,7 +79,7 @@
         filename: kunda-tsemendivabrik.jpg
 
 -
-    path: majad/kunda-hudroelektrijaam
+    path: houses/kunda-hydroelectric-power-station
     geo: 59.502904,26.542053
     title: Kunda Hydroelectric Power Station
     text: |
@@ -90,7 +90,7 @@
         filename: kunda-hudroelektrijaam.jpg
 
 -
-    path: majad/direktori-maja
+    path: houses/directors-house
     geo: 59.501989,26.540510
     title: The Director´s House
     text: |
@@ -99,7 +99,7 @@
         filename: direktori-maja.jpg
 
 -
-    path: majad/kunda-keskkool-kasemael
+    path: houses/kunda-seconday-school-in-kasemae
     geo: 59.500382,26.513516
     title: Kunda Seconday School in Kasemäe
     text: |
@@ -108,7 +108,7 @@
         filename: kunda-keskkool-kasemael.jpg
 
 -
-    path: majad/kunda-vabrikukool
+    path: houses/kunda-factory-school
     geo: 59.497923,26.541270
     title: The Kunda Factory School
     text: |
