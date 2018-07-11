@@ -24,7 +24,7 @@ cp -r ./assets/* ${BUILD_DIR}/assets
 
 echo
 echo --------- FETCH
-export ENTU_QUERY="_type.string=news&props=path.string,date.date,title.string,text.string,photo._id,photo.filename&sort=-date.date"
+export ENTU_QUERY="_type.string=news&props=path.string,date.date,name.string,text.string,photo._id,photo.filename&sort=-date.date"
 ./node_modules/entu-ssg/helpers/entu2yaml.js ${SOURCE_DIR}/uudised/_uudis/data.yaml
 
 export ENTU_QUERY="_type.string=document&props=name.string,files._id,files.filename"
