@@ -2,4 +2,4 @@
 title: Houses
 path: houses
 data:
-  majad: ./majad/_maja/data.yaml
+  majad: /majad/_maja/data.et.yaml
