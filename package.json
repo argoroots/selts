@@ -4,7 +4,7 @@
   "description": "Kunda Hariduse Toetusselts",
   "private": true,
   "dependencies": {
-    "entu-ssg": "^4.1.3"
+    "entu-ssg": "4.3.0"
   },
   "scripts": {
     "build": "./build.sh",
