@@ -6,8 +6,8 @@
 export SOURCE_DIR=./source
 export BUILD_DIR=./build
 
-# export ENTU_DB=
-# export ENTU_KEY=
+export ENTU_DB=kunda
+export ENTU_KEY=28sVbcfZDTRffE3TdccAgCTFZha7rgw3NPNej58tz5YRzjxT
 
 
 echo
