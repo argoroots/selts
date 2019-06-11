@@ -33,7 +33,7 @@ export ENTU_QUERY="_type.string=document&props=name.string,files._id,files.filen
 
 echo
 echo --------- BUILD
-./node_modules/entu-ssg/build.js ./entu-ssg.yaml
+npm run build
 
 
 echo
