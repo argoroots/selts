@@ -2,4 +2,3 @@ node_modules
 build
 source/dokumendid/dokumendid.yaml
 source/uudised/_uudis/data.yaml
-package-lock.json
