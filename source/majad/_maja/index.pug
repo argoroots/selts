@@ -33,4 +33,4 @@ block content
 block images
     if self.photo
         each i in self.photo.slice(1)
-            .section(style="background-image:url('/assets/images/majad/" + i.filename + "')")
+            .section(style="background-image:url('./assets/images/majad/" + i.filename + "')")
