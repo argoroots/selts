@@ -3,7 +3,9 @@ locales:
 defaultLocale: et
 
 source: ./source
-build: ./build
+js: ./source/_scripts
+styl: ./source/_styles
+build: ./_site
 assets: ./assets
 
 protectedFromCleanup:

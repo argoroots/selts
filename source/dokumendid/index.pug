@@ -16,7 +16,7 @@ block vars
 
 block content
     .row
-        each d in self.data.dokumendid
+        each d in self.data.dokumendid || []
             - var files = getList(d.files)
 
             if files.length === 1
