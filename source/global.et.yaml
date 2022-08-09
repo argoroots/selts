@@ -1,8 +1,9 @@
 siteTitle: Kunda Hariduse Toetusselts
 
 menu:
-    uudised: Uudised
+    # uudised: Uudised
     seltsist: Seltsist
     liikmed: Liikmed
-    dokumendid: Dokumendid
+    # dokumendid: Dokumendid
+    pohikiri: Põhikiri
     kontakt: Kontakt
