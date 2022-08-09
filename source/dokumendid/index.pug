@@ -21,13 +21,13 @@ block content
 
             if files.length === 1
                 h2.col-xs-12.col-sm-8.col-sm-offset-4
-                    a(href='/dokumendid/' + files[0]._id + '/' + files[0].filename)= d.name
+                    a(href='./dokumendid/' + files[0]._id + '/' + files[0].filename)= d.name
             else
                 h2.col-xs-12.col-sm-8.col-sm-offset-4= d.name
                 ul.list-unstyled.col-xs-12.col-sm-8.col-sm-offset-4
                     each f in files
                         li
-                            a(href='/dokumendid/' + f._id + '/' + f.filename)= f.filename
+                            a(href='./dokumendid/' + f._id + '/' + f.filename)= f.filename
 
         h2.col-xs-12.col-sm-8.col-sm-offset-4
-            a(href='/pohikiri/') Põhikiri
+            a(href='./pohikiri/') Põhikiri

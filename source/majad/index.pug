@@ -8,7 +8,7 @@ block script
 block content
     each u in self.data.majad
         //- h1.row
-        //-     a(href='/' + u.path + '/')
+        //-     a(href='./' + u.path + '/')
         //-         .col-xs-12.col-sm-9= u.title
         if u.geo
             .map-item.hidden(data-geo=u.geo, data-info=u.title, data-url='/' + u.path + '/')

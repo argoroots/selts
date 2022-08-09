@@ -13,7 +13,7 @@ block vars
 block content
     each u in self.data.uudised || []
         h2.row
-            a(href='/' + u.path + '/')
+            a(href='./' + u.path + '/')
                 span.hidden-xs.col-sm-4.text-right= dt(u.date)
                 .col-xs-12.col-sm-8= u.name
                 span.visible-xs.col-xs-12= dt(u.date)

@@ -15,15 +15,15 @@ html(lang='et')
         meta(property='og:image', content=self.image)
         meta(property='og:description', content=self.description)
 
-        base(href='https://argoroots.github.io/selts/')
+        base(href='./selts/')
 
         title= self.title ? self.title + ' · ' + self.siteTitle : self.siteTitle
 
         link(href='https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i', rel='stylesheet')
         link(href='https://fonts.googleapis.com/css?family=Teko:700', rel='stylesheet')
-        link(href='/assets/css/bootstrap.min.css', rel='stylesheet')
-        link(href='/assets/css/jquery.fullPage.min.css', rel='stylesheet')
-        link(href='/style.css', rel='stylesheet')
+        link(href='./assets/css/bootstrap.min.css', rel='stylesheet')
+        link(href='./assets/css/jquery.fullPage.min.css', rel='stylesheet')
+        link(href='./style.css', rel='stylesheet')
 
         script.
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -40,7 +40,7 @@ html(lang='et')
                 .container
                     .row
                         #header.text-center
-                            a(href='/') Kunda Hariduse Toetusselts
+                            a(href='./') Kunda Hariduse Toetusselts
 
                     if self.hideContent
                         .col-xs-12.col-sm-10.col-sm-offset-1
@@ -48,24 +48,24 @@ html(lang='et')
                                 ul#frontpage-navigation.list-unstyled.list-inline
                                     each m, idx in self.menu || []
                                         li
-                                            a(href='/' + idx + '/')= m
+                                            a(href='./' + idx + '/')= m
                     else
                         #content.col-xs-12.col-sm-10.col-sm-offset-1
                             .text-center
                                 ul#navigation.list-unstyled.list-inline
                                     each m, idx in self.menu || []
                                         li
-                                            a(href='/' + idx + '/', class= self.path === idx ? 'active' : '')= m
+                                            a(href='./' + idx + '/', class= self.path === idx ? 'active' : '')= m
 
                             block content
 
             .section
             block images
 
-        script(src='/assets/js/jquery-3.2.1.min.js')
-        script(src='/assets/js/scrolloverflow.min.js')
-        script(src='/assets/js/jquery.fullPage.min.js')
+        script(src='./assets/js/jquery-3.2.1.min.js')
+        script(src='./assets/js/scrolloverflow.min.js')
+        script(src='./assets/js/jquery.fullPage.min.js')
 
         block script
 
-        script(src='/script.js')
+        script(src='./script.js')
