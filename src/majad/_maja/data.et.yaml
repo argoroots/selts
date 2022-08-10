@@ -1,5 +1,5 @@
 -
-    path: majad/kunda-vabriku-nn-saksa-kool
+    path: ./majad/kunda-vabriku-nn-saksa-kool
     geo: 59.500775,26.535441
     title: Kunda vabriku nn saksa kool
     text: |
@@ -8,7 +8,7 @@
         filename: kunda-vabriku-nn-saksa-kool.jpg
 
 -
-    path: majad/opikute-maja
+    path: ./majad/opikute-maja
     geo: 59.509584,26.546144
     title: Öpikute maja
     text: |
@@ -29,7 +29,7 @@
         filename: opikute-maja.jpg
 
 -
-    path: majad/lahta-koolituba
+    path: ./majad/lahta-koolituba
     geo: 59.501946,26.522582
     title: Lähta koolituba
     text: |
@@ -38,7 +38,7 @@
         filename: lahta-koolituba.jpg
 
 -
-    path: majad/valge-maja
+    path: ./majad/valge-maja
     geo: 59.509595,26.547599
     title: Valge maja
     text: |
@@ -47,7 +47,7 @@
         filename: valge-maja.jpg
 
 -
-    path: majad/kunda-uus-koolimaja
+    path: ./majad/kunda-uus-koolimaja
     geo: 59.503241,26.528894
     title: Kunda uus koolimaja
     text: |
@@ -64,7 +64,7 @@
         filename: kunda-uus-koolimaja.jpg
 
 -
-    path: majad/kunda-tsemendivabrik
+    path: ./majad/kunda-tsemendivabrik
     geo: 59.499613,26.540347
     title: Kunda tsemendivabrik
     text: |
@@ -77,7 +77,7 @@
         filename: kunda-tsemendivabrik.jpg
 
 -
-    path: majad/kunda-hudroelektrijaam
+    path: ./majad/kunda-hudroelektrijaam
     geo: 59.502904,26.542053
     title: Kunda hüdroelektrijaam
     text: |
@@ -88,7 +88,7 @@
         filename: kunda-hudroelektrijaam.jpg
 
 -
-    path: majad/direktori-maja
+    path: ./majad/direktori-maja
     geo: 59.501989,26.540510
     title: Direktori maja
     text: |
@@ -97,7 +97,7 @@
         filename: direktori-maja.jpg
 
 -
-    path: majad/kunda-keskkool-kasemael
+    path: ./majad/kunda-keskkool-kasemael
     geo: 59.500382,26.513516
     title: Kunda Keskkool Kasemäel
     text: |
@@ -108,7 +108,7 @@
         filename: kunda-keskkool-kasemael.jpg
 
 -
-    path: majad/kunda-vabrikukool
+    path: ./majad/kunda-vabrikukool
     geo: 59.497923,26.541270
     title: Kunda vabrikukool
     text: |
