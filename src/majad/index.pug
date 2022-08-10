@@ -2,7 +2,7 @@ extends /_templates/layout
 
 
 block script
-    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDKUxMa3cmiecm331dv0_gTDE0wKkuxpsw')
+    script(src='https://maps.googleapis.com/maps/api/js?key=' + self.env.MAPS_API_KEY)
 
 
 block content

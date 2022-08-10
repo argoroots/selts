@@ -22,6 +22,8 @@ concurrency:
 jobs:
   # Build job
   build:
+    environment:
+      name: github-pages
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -37,6 +39,8 @@ jobs:
         cp -r ./public/* ./dist
 
     - name: Build
+      env:
+        MAPS_API_KEY: ${{ secrets.MAPS_API_KEY }}
       run: |
         npm install
         npm run build
