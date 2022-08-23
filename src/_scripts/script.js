@@ -26,7 +26,7 @@ $(function() {
             rotateControl: false,
             styles: [
                 {
-                    'featureType': 'poi.business',
+                    'featureType': 'poi',
                     'stylers': [
                         {
                             'visibility': 'off'
