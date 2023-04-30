@@ -23,8 +23,9 @@ block vars
 
 block content
     h1= self.name
-        span.visible-xs= dt(self.date)
-        span.hidden-xs.pull-right= dt(self.date)
+        if self.date
+            span.visible-xs= dt(self.date)
+            span.hidden-xs.pull-right= dt(self.date)
     article
         +markdown(self.text)
 
