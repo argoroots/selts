@@ -1,5 +1,7 @@
 -
     path: tegemised/looduskaunis-viru-nigula-vald
+    photo:
+        filename: /images/fotokonkurss.jpg
     text: |
         KUNDA HARIDUSE TOETUSSELTS kuulutab välja fotokonkursi teemal{ .text-center }
 
